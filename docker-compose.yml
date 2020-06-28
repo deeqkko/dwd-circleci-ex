@@ -1,0 +1,12 @@
+version: "3"
+services:
+  dwd-circleci-exercise:
+    image: deeq/dwd-circleci-ex
+    ports:
+      - 4000:80
+    container_name: dwd-circleci-ex
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
